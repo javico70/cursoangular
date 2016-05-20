@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="miThirdApp">
+<head>
+    <title>Hola controller</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="controller3.js"></script>
+    <script >
+        angular.module("miThirdApp")
+        .controller("thirdController",function($scope){
+            $scope.nombre="tercera opción";
+        });
+    </script>
+</head>
+<body ng-controller="thirdController">
+{{"hola " + nombre }}
+</body>
+</html>
