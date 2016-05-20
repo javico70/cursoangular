@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="appcontrolador as vm">
+<head>
+    <meta charset="UTF-8">
+    <title>Uso de controller</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+</head>
+<body>
+  <br>
+    <input type="text" ng-model="vm.campotexto">
+    <br/>
+    {{vm.campotexto}} - {{vm.camposelect}}
+    <br/>
+    <select ng-model="vm.camposelect">
+        <option value="uno">1</option>
+        <option value="dos">2</option>
+    </select>
+    <input type="button" ng-click="vm.cambiarValores()" value="Pulsa aquí">
+
+
+    <script>
+        var app = angular.module("app", []);
+        app.controller("appcontrolador",function(){
+            var vm=this;
+            vm.camposelect = "uno";
+            vm.campotexto="Uno";
+
+            vm.cambiarValores=function () {
+                vm.camposelect = "dos";
+                vm.campotexto="Dos";
+            }
+
+        });
+        </script>
+</body>
+</html>
