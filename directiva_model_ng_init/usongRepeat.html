@@ -8,20 +8,26 @@
 <body>
     <input type="text" ng-model="vm.campotexto">
     <br/>
-    <br/>
     <select ng-model="vm.camposelect">
         <option value="uno">1</option>
         <option value="dos">2</option>
     </select>
-    <input type="button" ng-click="vm.agregarValores()" value="Pulsa aquí">
+    <br/>
+    <!--{{vm.campotexto}} - {{vm.camposelect}}  -->
+    <ol>
+        <li ng-repeat="actual in vm.textos">
+            {{actual}}
+        </li>
+    </ol>
+    <input type="button" ng-click="vm.agregarValores()" value="Pulsa aquí para agregar texto">
 
 
 <script>
     var app = angular.module("app", []);
     app.controller("appcontrolador",function(){
         var vm=this;
-        vm.camposelect = "uno";
-        vm.campotexto="Uno";
+        //vm.camposelect = "";
+        vm.campotexto="";
 
         vm.textos = [];        //se crea un array
 
