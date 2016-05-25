@@ -18,6 +18,6 @@ app.controller("miController",function($scope){
     ];
     $scope.agregarComentario = function () {
         $scope.comentarios.push($scope.nuevoComentario);
-        $scope.nuevoComentario={};
+        $scope.nuevoComentario={}; //para que se quede en blanco y no recuerde lo último introducido
     }
 });

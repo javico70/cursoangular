@@ -30,21 +30,21 @@
             <div class="row row-fluid">
                 <h2>Lista de paises</h2>
                 <div class="col-md-6" name="busqueda">
-                    <label for="buscar">Busqueda</label>
+                    <label for="search_field">Busqueda</label>
                     <input type="search" class="form-control" ng-model="buscar" placeholder="Búsqueda de países...">
                 </div>
                 <div class="=col-md-6" name="ordenar">
                     <label for="orden">Ordenar</label>
                     </br>
-                    <div class="btn-group" name="orden">
-                        <button type="button" class="btn btn-sucess">Nombre</button>
-                        <button type="button" class="btn ">Población</button>
+                    <div class="btn-group" name="ordenar_campo">
+                        <button type="button" class="btn btn-sucess" ng-click="order_field='name'">Nombre</button>
+                        <button type="button" class="btn " ng-click="order_field='population'">Población</button>
                     </div>
                 </div>
             </div>
             <hr>
             <div class="row row-fluid">
-                <div class="col-md-6" ng-repeat="paises in lista_paises">
+                <div class="col-md-6" ng-repeat="paises in lista_paises | filter:buscar | orderBy:order_field">
                     <!--  {{paises}}  -->
                     <div class="col-md-4">
                         <img src="http://www.geonames.org/flags/x/{{paises.alpha2Code | lowercase}}.gif" class="img-responsive"></img>

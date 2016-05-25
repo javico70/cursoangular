@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabajando con http y Json</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="appi.js"></script>
+
+</head>
+<body ng-app="miAppi" ng-controller="httpController">
+    <ul>
+        <li ng-repeat="dato in posts">
+            <h4>{{dato.title}}</h4>
+            <p>{{dato.body}}</p>
+        </li>
+    </ul>
+
+</body>
+</html>

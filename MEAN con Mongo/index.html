@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Control de caja</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="appi.js"></script>
+
+
+    </head >
+    <body ng-app="miApp" ng-controller="miController as vm" > <!--se ha sacado de aquí ng-init="vm.lista_peliculas=[] y se ha pasado al controller -->
+        <input type="text" ng-model="vm.nombre">
+        <span>Hola {{vm.nombre}}, bienvenido</span>
+        </br>
+        <!--<a ng-click="nombre='Irene'">Saludos a Irene</a>  -->
+        <input type="text" ng-model="vm.pelis" >
+        <button ng-click="vm.agregarPeliculas()">Añadir peliculas</button>
+        {{vm.algo}}
+        <ul>
+            <li ng-repeat="peliculas in vm.lista_peliculas track by $index "> <!-- si no se pone track by index, cuanda haya dos iguales, peta -->
+               indice {{$index}} es para:  <b>{{peliculas}}</b>
+            </li>
+        </ul>
+
+
+    </body>
+</html>
