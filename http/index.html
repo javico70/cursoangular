@@ -8,12 +8,28 @@
 
 </head>
 <body ng-app="miAppi" ng-controller="httpController">
+
+    <button type="button" ng-click="recibirGet()">Recibir datos por Get originales</button>
+    <br/>
+    <button type="button" ng-click="limpiarArray()">Borrar array</button>
+    <br/>
+    Titulo:<input type="text" ng-model="nuevoPost.title"><br/>
+    Comentario: <textarea ng-model="nuevoPost.body"></textarea><br/>
+
+    <button type="button" ng-click="addPost()">Enviar datos por Post</button>
     <ul>
         <li ng-repeat="dato in posts">
             <h4>{{dato.title}}</h4>
             <p>{{dato.body}}</p>
         </li>
     </ul>
+    <ul hidden="yes">
+        <li ng-repeat="dato in posts">
+            <h4>{{dato.nuevoPost.title}}</h4>
+            <p>{{dato.nuevoPost.body}}</p>
+        </li>
+    </ul>
+
 
 </body>
 </html>
