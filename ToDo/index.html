@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <title>Lista de trabajos TODO</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="angular-local-storage.min.js"></script>
     <script src="app.js"></script>
 </head>
 <body ng-app="todoApp" ng-controller="todoController">
+
     <ul>
-        <li ng-repea="actividad in listaActividades">
-            <h4>{{}}</h4>
+        <li ng-repeat="actividad in listaActividades">
+            {{actividad.accion}} -
+            {{actividad.hora | date: 'short'}}
         </li>
     </ul>
-    <form>
-        <input type="text" ng-model="$scope.accion"><br/>
-        <input type="datetime-local" ng-model="$scope.hora"><br/>
-        <input type="submit" ng-click="addLista()" value="Añadir actividad">
-    </form>
-</body>
-</html>
+
+    <form ng-submit="addLista()"> <!-- funciona tando dandole al enter o submit -->
+        <input type="text" ng-model="actividades.accion"><br/>
+       <input type="datetime-local" ng-model="actividades.hora"><br/>
+        <!--  <input type="text" ng-model="actividades.hora"><br/> -->
+         <input type="submit" ng-click="addLista()" value="Añadir actividad">
+     </form>
+    <button ng-click="Borrarlista()">Borrar Lista</button>
+
+
+ </body>
+ </html>
