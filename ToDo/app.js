@@ -8,7 +8,12 @@ angular.module("todoApp",["LocalStorageModule"])
         else {
             $scope.listaActividades = [];
         }
-
+        $scope.$watch(function () {
+            return $scope.newActv;
+        }),function (newValue, oldValue) {
+            console.log(newValue);
+            console.log(oldValue);
+        }
         /*$scope.actividades={};
         $actividades={
             accion: $scope.actividades.accion,
@@ -19,6 +24,7 @@ angular.module("todoApp",["LocalStorageModule"])
             $scope.actividades={};
             localStorageService.set("localSTodo",$scope.listaActividades);
             console.log($scope.actividades);
+            //console.log(listaActividades);
         }
         $scope.borrarLista=function(){
             $scope.listaActividades=[];

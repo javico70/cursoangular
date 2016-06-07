@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="todoApp">
 <head>
     <meta charset="UTF-8">
     <title>Lista de trabajos TODO</title>
@@ -7,22 +7,23 @@
     <script src="angular-local-storage.min.js"></script>
     <script src="app.js"></script>
 </head>
-<body ng-app="todoApp" ng-controller="todoController">
+<body  ng-controller="todoController">
 
     <ul>
         <li ng-repeat="actividad in listaActividades">
-            {{actividad.accion}} -
-            {{actividad.hora | date: 'short'}}
+           <!-- {{actividad.accion}} -
+            {{actividad.hora | date: 'short'}} -->
+            {{actividad.accion}}
         </li>
     </ul>
 
     <form ng-submit="addLista()"> <!-- funciona tando dandole al enter o submit -->
-        <input type="text" ng-model="actividades.accion"><br/>
-       <input type="datetime-local" ng-model="actividades.hora"><br/>
-        <!--  <input type="text" ng-model="actividades.hora"><br/> -->
+        <!-- <input type="text" ng-model="actividades.accion"><br/>
+        <input type="datetime-local" ng-model="actividades.hora"><br/> -->
+           <input type="text" ng-model="actividades.accion"><br/>
          <input type="submit" ng-click="addLista()" value="Añadir actividad">
      </form>
-    <button ng-click="Borrarlista()">Borrar Lista</button>
+    <button ng-click="borrarLista()">Borrar Lista</button>
 
 
  </body>
